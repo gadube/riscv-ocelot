@@ -1199,7 +1199,7 @@ input [2:0] func;
   begin
     /* verilator lint_off CASEINCOMPLETE */
     /* verilator lint_off CASEOVERLAP */
-    casez(func) // synopsys full_case parallel_case
+    casez(func) /* This causes errors in compilation // synopsys full_case parallel_case */
                             // {branch flag, return result or flag, flag return type, unsigned flavor, sub flavor, decoded op}
     3'b000: decode_type_e = {1'b0,1'b0, 2'b00,1'b0,1'b0,3'b000}; // CSRRW
     3'b001: decode_type_e = {1'b0,1'b1, 2'b00,1'b0,1'b0,3'b000}; // CSRRS
@@ -1222,7 +1222,7 @@ input [2:0] func;
   begin
     /* verilator lint_off CASEINCOMPLETE */
     /* verilator lint_off CASEOVERLAP */
-    casez(func) // synopsys full_case parallel_case
+    casez(func) /* This causes errors in compilation // synopsys full_case parallel_case */
                             // {branch flag, return result or flag, flag return type, unsigned flavor, sub flavor, decoded op}
     3'b000: decode_type_sb = {1'b1,1'b0, 2'b00,1'b0,1'b1,3'b000}; // ADD BEQ
     3'b001: decode_type_sb = {1'b1,1'b0, 2'b01,1'b0,1'b1,3'b000}; // SUB NE
@@ -1247,7 +1247,7 @@ input       load;
     if(load)
     begin
       /* verilator lint_off CASEINCOMPLETE */
-      casez(func) // synopsys full_case parallel_case
+      casez(func) /* This causes errors in compilation // synopsys full_case parallel_case */
                                 // {branch flag, return result or flag, flag return type, unsigned flavor, sub flavor, decoded op}
         3'b000: decode_type_i = {1'b0,1'b1, 2'b00,1'b0,1'b0,3'b000}; // LB
         3'b001: decode_type_i = {1'b0,1'b1, 2'b00,1'b0,1'b0,3'b000}; // LH
