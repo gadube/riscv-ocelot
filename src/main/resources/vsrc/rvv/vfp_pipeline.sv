@@ -1,4 +1,7 @@
 // See LICENSE.TT for license details.
+
+`include "tt_briscv_pkg.vh"
+
 module vfp_pipeline #(parameter 
    LOCAL_MEM_BYTE_ADDR_WIDTH = 12,
    INCL_VEC = 1,
