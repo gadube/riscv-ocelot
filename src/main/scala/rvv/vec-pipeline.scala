@@ -216,7 +216,7 @@ with HasBlackBoxResource with HasBlackBoxPath {
   require (make.! == 0, "Failed to run preprocessing step")
 
   // add wrapper/blackbox after it is preprocessed.
-  addResource("/vsrc/OcelotCoreBlackbox.preprocessed.sv")
+  addResource("vsrc/OcelotCoreBlackbox.preprocessed.sv")
   
 }
 
